@@ -440,7 +440,16 @@ void AChefWithPawsCharacter::Fetch_Implementation()
 			{
 				TempPlate->LoadObject(WorkbenchPickup);
 				WorkbenchPickup->UpdateCurrentCharacter(this);
-				CurrentWorkbench->UpdateCurrentPickup(nullptr);
+				if (WorkbenchID == (TEXT("024")))
+				{
+					AWB_Griddle* TempGriddle = Cast<AWB_Griddle>(CurrentWorkbench);
+					TempGriddle->UnloadPickup();
+				}
+				else if (WorkbenchID == (TEXT("023")))
+				{
+					AWB_ChopBoard* TempChopBoard = Cast<AWB_ChopBoard>(CurrentWorkbench);
+					TempChopBoard->UnloadPickup();
+				}
 				UE_LOG(LogTemp, Warning, TEXT("Character: load food to empty plate"));
 
 			}

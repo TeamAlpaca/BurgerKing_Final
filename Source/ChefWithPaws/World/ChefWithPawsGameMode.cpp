@@ -55,7 +55,7 @@ void AChefWithPawsGameMode::StartNow()
 
 void AChefWithPawsGameMode::ReturnToMenu()
 {
-	GetWorld()->ServerTravel(FString("/Game/Maps/main"));
+	UGameplayStatics::OpenLevel(GetWorld(), "main");
 }
 
 void AChefWithPawsGameMode::AdvanceTimer()
@@ -177,5 +177,5 @@ void AChefWithPawsGameMode::MinusCoin(int32 Number)
 
 void  AChefWithPawsGameMode::Return()
 {
-	GetWorld()->ServerTravel(FString("/Game/Maps/main"));
+	UGameplayStatics::OpenLevel(GetWorld(), "main");
 }

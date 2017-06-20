@@ -3,7 +3,19 @@
 #include "ChefWithPaws.h"
 #include "MenuGameMode.h"
 
-void AMenuGameMode::StartGame()
+void  AMenuGameMode::BeginPlay()
 {
-	GetWorld()->ServerTravel(FString("/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap"));
+	;
+}
+void AMenuGameMode::GoToLevel1()
+{
+
+	//GetWorld()->ServerTravel(FString("/Game/Maps/Level_01"));
+	UGameplayStatics::OpenLevel(GetWorld(), "Level_01");
+
+}
+void AMenuGameMode::GoToLevel2()
+{
+	//GetWorld()->ServerTravel(FString("/Game/Maps/level2"));
+	UGameplayStatics::OpenLevel(GetWorld(), "level2");
 }

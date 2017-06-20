@@ -13,8 +13,13 @@ class CHEFWITHPAWS_API AMenuGameMode : public AChefWithPawsGameMode
 {
 	GENERATED_BODY()
 
-		UFUNCTION(BlueprintCallable, Category = "UMG Game")
-		void StartGame();
+	virtual void BeginPlay() override;
+
+	UFUNCTION(BlueprintCallable, Category = "UMG Game")
+		void GoToLevel1();
+
+	UFUNCTION(BlueprintCallable, Category = "UMG Game")
+		void GoToLevel2();
 	
 	
 };

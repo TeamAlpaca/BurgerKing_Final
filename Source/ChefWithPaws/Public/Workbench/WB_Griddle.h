@@ -22,10 +22,10 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION()
-		void LoadPickup(APickupBase * const & PickupToLoad);
+	UFUNCTION(BlueprintNativeEvent,category="cook")
+		void LoadPickup(APickupBase * &PickupToLoad);
 
-	UFUNCTION()
+	UFUNCTION(BlueprintNativeEvent, category = "cook")
 		void UnloadPickup();
 
 	UFUNCTION()

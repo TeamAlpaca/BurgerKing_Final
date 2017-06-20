@@ -27,7 +27,7 @@ void AWB_Griddle::Tick(float DeltaTime)
 
 
 
-void AWB_Griddle::LoadPickup(APickupBase * const & PickupToLoad)
+void AWB_Griddle::LoadPickup_Implementation(APickupBase * &PickupToLoad)
 {
 	if ((!CurrentPickup) && PickupToLoad)
 	{
@@ -36,7 +36,7 @@ void AWB_Griddle::LoadPickup(APickupBase * const & PickupToLoad)
 	}
 }
 
-void AWB_Griddle::UnloadPickup()
+void AWB_Griddle::UnloadPickup_Implementation()
 {
 	StopProcessIngredient();
 	if (CurrentPickup->getClassID().Contains(TEXT("012")))
